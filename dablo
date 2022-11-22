@@ -1,0 +1,39 @@
+balance = 5000
+
+print("""welcome to ATM machine
+
+Choose transaction
+
+1. BALANCE
+2. WITHDRAW
+3 . DIPOSIT
+4. EXIT
+""")
+
+while True:
+	trans = int(input("Enter transaction: "))
+	if trans == 1:
+		print("Your BALANCE is", balance)
+		anothertrans = input("Do you want another trans.. YES / NO: ")
+		if anothertrans == "Yes" or "yes" or "YES":
+			continue
+		else:
+			break
+	elif trans == 2:
+		withdraw = float(input("Enter amount to withdraw: "))
+		if balance > withdraw :
+			total = balance - withdraw
+			print("Success")
+			print("Your balance is: ", total)
+		else:
+			print("Not enough balance")
+	elif trans == 3:
+		deposit = float(input("Enter amount to deposit: "))
+		totalbalance = balance + deposit
+		print("Success")
+		print("Your total balance is: ", totalbalance)
+	elif trans == 4:
+		print("Exit")
+	
+	else:
+		print("No selected transaction")
